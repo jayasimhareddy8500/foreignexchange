@@ -21,7 +21,15 @@ public class AppConstant {
 
 	// User
 	public static final String USER_NOT_FOUND = "User not found";
+	public static final String USER_ACCOUNT_NOT_FOUND = "User Account not found";
+	public static final String TO_USER_ACCOUNT_NOT_FOUND = "To user account not found";
 	public static final Integer SUCCESS_STATUS_CODE = 200;
 	public static final String LOGIN_SCCUESS_MESSAGE = "User Login Successfully";
+	
+	//Transfer the Currency converted
+	public static final String TRANSFER_SCCUESS_MESSAGE = "Currency Exchanged Successfully";
+	public static final String TRANSFER_AMOUNT_SHOULD_NOT_LESS_1 = "transferAmount can't be less than 1";
+	public static final String REMIT_CHARGES_SHOULD_NOT_LESS_1 = "remitChanges can't be less than 1";
+	public static final String TOTAL_AMOUNT_SHOULD_NOT_LESS_1 = "totalAmount can't be less than 1";
 
 }

@@ -3,6 +3,7 @@ package com.foreignexchange.entity;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,7 +32,7 @@ public class UserAccount {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long accountNumber;
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private AccountType accountType;
 	private LocalDate createdDate;
 	@OneToOne
