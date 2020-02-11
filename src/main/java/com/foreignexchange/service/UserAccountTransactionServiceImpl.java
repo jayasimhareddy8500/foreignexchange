@@ -94,14 +94,14 @@ public class UserAccountTransactionServiceImpl implements UserAccountTransaction
 		userTransaction.setTransactionType(ForeignExchangeEnum.TransactionType.DEBIT);
 		BeanUtils.copyProperties(transferRequestDto, userTransaction);
 		userTransaction.setStatus(ForeignExchangeEnum.TransferStatus.PENDING);
-		
+
 		log.debug("save the account transaction details...");
 		userTransactionRepository.save(userTransaction);
 
+		log.debug("setting response details of the transaction details...");
 		TransferResponseDto responseDto = new TransferResponseDto();
 		responseDto.setTransRefNo(userTransaction.getUserTransactionId());
 		responseDto.setStatus(userTransaction.getStatus());
-		// TODO Auto-generated method stub
 		return responseDto;
 	}
 
