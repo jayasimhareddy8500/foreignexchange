@@ -3,6 +3,8 @@ package com.foreignexchange.entity;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.foreignexchange.common.ForeignExchangeEnum.TransactionType;
+import com.foreignexchange.common.ForeignExchangeEnum.TransferStatus;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -29,6 +32,7 @@ public class UserTransaction {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer userTransactionId;
 	private LocalDate transactionDate;
+	@Enumerated(EnumType.STRING)
 	private TransactionType transactionType;
 	@ManyToOne
 	@JoinColumn(name = "from_account_number")
@@ -37,6 +41,8 @@ public class UserTransaction {
 	@JoinColumn(name = "to_account_number")
 	private UserAccount toUserAccount;
 	private Double amount;
-	private Double remitCharges;
+	private Double remitChange;
 	private Double transferAmount;
+	@Enumerated(EnumType.STRING)
+	private TransferStatus status;
 }
