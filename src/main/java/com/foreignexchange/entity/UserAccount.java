@@ -41,5 +41,6 @@ public class UserAccount {
 	@ManyToOne
 	@JoinColumn(name = "currency_type_id")
 	private Currency currency;
+	private Double availableBalance;
 	
 }
